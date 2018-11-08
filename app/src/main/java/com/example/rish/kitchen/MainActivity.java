@@ -75,12 +75,12 @@ private ProgressBar progressBar;
                 else
                     progressBar.setVisibility(View.VISIBLE);
             }
-        });
-        webView.setWebChromeClient(new WebChromeClient(){
+
             @Override
             public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
                 callback.invoke(origin,true,false);
             }
+
         });
         webView.setWebViewClient(new WebViewClient() {
 
@@ -112,7 +112,7 @@ private ProgressBar progressBar;
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 1
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
         }
         else
           super.onRequestPermissionsResult(requestCode, permissions, grantResults);
